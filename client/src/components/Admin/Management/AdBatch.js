@@ -7,6 +7,7 @@ const AdBatch = () => {
 
 
     const openNav = () => {
+        // ok so i have to commit
         var body = document.getElementsByTagName("BODY")[0];
         let width = body.offsetWidth
         if (width <= 640) {
