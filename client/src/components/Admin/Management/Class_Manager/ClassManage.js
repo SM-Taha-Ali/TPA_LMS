@@ -2,20 +2,21 @@ import React, { useState, useEffect, useContext, useRef } from 'react';
 import subBindContext from '../../../../context/domain/student/subBindContext';
 import subjectContext from '../../../../context/domain/student/subjectContext';
 import classContext from '../../../../context/domain/student/classContext';
+import sectionContext from '../../../../context/domain/student/sectionContext';
 import empregContext from '../../../../context/registration/empregContext';
 import groupContext from '../../../../context/domain/student/groupContext';
 import subgroupContext from '../../../../context/domain/student/subgroupContext';
 import batchContext from '../../../../context/management/batches/batchContext';
 import ClassManageTr from "./ClassManageTr"
 import Select from 'react-select';
-import { Outlet, Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import "../../Stylesheets/batch.css"
 
 const ClassManage = () => {
 
   const [batchCreate, setbatchCreate] = useState([])
 
-  const [result, setResult] = useState({ batchname: "", start_date: "", end_date: "", fees_input_batch:""  });
+  const [result, setResult] = useState({ batchname: "", start_date: "", end_date: "", fees_input_batch: "" });
 
   const onChangeResult = (e) => {
     setResult({ ...result, [e.target.name]: e.target.value })
@@ -35,7 +36,7 @@ const ClassManage = () => {
   const contextEmp = useContext(empregContext)
   const { getSubjectEmployee } = contextEmp
 
-  const [subBinds, setsubBinds] = useState({ subject: "", group: "", subgroup: "", class: "" })
+  const [subBinds, setsubBinds] = useState({ subject: "", group: "", subgroup: "", class: "", section: "" })
   const [subJECTS, setsubJECTS] = useState([])
 
   const ref = useRef(null)
@@ -68,6 +69,12 @@ const ClassManage = () => {
     getsubgroup()
   }, [])
 
+  const contextSection = useContext(sectionContext);
+  const { section, getsection } = contextSection
+
+  useEffect(() => {
+    getsection()
+  }, [])
 
   const subJects = []
   subject.map((i) => {
@@ -87,6 +94,11 @@ const ClassManage = () => {
   const subgRoup = []
   subgroup.map((i) => {
     subgRoup.push({ value: i.value, label: i.label, name: i.name })
+  });
+
+  const secTion = []
+  section.map((i) => {
+    secTion.push({ value: i.value, label: i.label, name: i.name })
   });
 
   const onChange = (e) => {
@@ -120,16 +132,23 @@ const ClassManage = () => {
         <form action="">
           <div className='row mb-3'>
             <div className="col-md-4 py-2 ">
-              <label htmlFor="" className="form-label">Name</label>
-              <input type="text" className="form-control" id="section" name='batchname' placeholder='Enter batch name here...' onChange={onChangeResult} />
-            </div>
-            <div className="col-md-4 py-2 ">
               <label htmlFor="" className="form-label">Start Date</label>
               <input type="date" className="form-control" id="sectio2n" name='start_date' placeholder='' onChange={onChangeResult} />
             </div>
             <div className="col-md-4 py-2 ">
               <label htmlFor="" className="form-label">End Date</label>
               <input type="date" className="form-control" id="sect23ion" name='end_date' placeholder='' onChange={onChangeResult} />
+            </div>
+            <div className="col-md-4 py-2 ">
+              <label htmlFor="" className="form-label">Section</label>
+              <Select
+                defaultValue={null}
+                onChange={onChange}
+                options={secTion}
+                width={100}
+                placeholder="Select section"
+                name='section'
+              />
             </div>
           </div>
           <div className="row">

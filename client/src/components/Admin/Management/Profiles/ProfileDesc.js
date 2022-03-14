@@ -4,9 +4,16 @@ import empregContext from '../../../../context/registration/empregContext';
 import { useLocation } from 'react-router-dom'
 import "../../Stylesheets/Profile.css";
 import Select from 'react-select';
+import IconButton from '@mui/material/IconButton';
+import PhotoCamera from '@mui/icons-material/PhotoCamera';
+import { styled } from '@mui/material/styles';
 import ModalListgroup from './ModalListgroup';
 
 const ProfileDesc = () => {
+
+  const Input = styled('input')({
+    display: 'none',
+  });
 
   const location = useLocation()
 
@@ -79,7 +86,14 @@ const ProfileDesc = () => {
             alt=""
             className="profile_desc_img d-inline-block"
           />
-          <i className="fas fa-camera upload_photo"></i>
+          <div className=''>
+            <label htmlFor="icon-button-file">
+              <Input accept="image/*" id="icon-button-file" type="file" />
+              <IconButton color="primary" aria-label="upload picture" component="span">
+                <PhotoCamera className='' />
+              </IconButton>
+            </label>
+          </div>
         </div>
         <h3 className="text-center">{user.name}</h3>
         <div className="row g-0 mt-4">

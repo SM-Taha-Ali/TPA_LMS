@@ -3,80 +3,117 @@
     --blue: #38A3A5;
     --light_blue: #57CC99;
     --green: #2d6a4f;
-    --light_green: #74c69d;
+    --light_green: #519259;
     --dark_green: #081c15;
+    --yellow: #FFC900;
 }
 
 
-.profile_card{
-    padding: 20px;
+.profile_card {
     border-radius: 10px;
     border: 1px solid #38A3A5;
     cursor: pointer;
+    overflow: hidden;
+    width: 210px;
+    padding: 10px;
 }
 
-.profile_img{
+.profile_img {
     width: 25%;
 }
 
-.profile_img_container img{
+.profile_img_container img {
     width: 50%;
 }
 
-.profile_card_body{
-    padding: 20px 20px 10px 20px;
+.icon_view_profile {
+    color: white;
 }
 
-.search_box{
+.profile_card_body {
+    color: black;
+}
+
+.apna_button_view {
+    font-size: 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #2d6a4f;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 5px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .3s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.profile_card:hover .overlay {
+    opacity: 1;
+  }
+
+.search_box {
     width: 300px;
 }
 
-.profile_card_footer{
+.profile_card_footer {
     text-align: center;
 }
 
-.profile_desc_img{
+.profile_desc_img {
     width: 13%;
 }
 
-.profile_desc_img_wrapper{
-    text-align: center;
-    width: 100%;
-    position: relative;
-}
-
-.border_test{
+.profile_desc_img_wrapper {
+    display: block;
     border: 1px solid red;
 }
 
-.detail_body{
+.border_test {
+    border: 1px solid red;
+}
+
+.detail_body {
     padding: 25px;
 }
 
-.icon_border{
+.icon_border {
     border: 2px solid var(--dark_blue);
     border-radius: 8px;
     background-color: rgba(0, 0, 0, 0);
     color: rgb(88, 88, 88);
-    
+
 }
 
-.icon_border:hover{
+.icon_border:hover {
     background-color: rgba(0, 0, 0, 0.05);
     cursor: pointer;
     color: var(--blue);
 }
 
-.icon_btn{
+.icon_btn {
     color: var(--dark_blue);
     cursor: pointer;
 }
 
-.icon_btn:hover{
+.icon_btn:hover {
     color: var(--blue);
 }
 
-.upload_photo{
+.upload_photo {
     display: block;
     position: absolute;
     color: #38A3A5;
@@ -86,13 +123,39 @@
     cursor: pointer;
 }
 
-.btn_delete{
+.btn_delete {
     background-color: #ff4444;
     color: rgb(214, 13, 13);
     background-color: rgba(255, 0, 0, 0.397)
 }
 
-.btn_delete:hover{
+.btn_delete:hover {
     color: white;
     background-color: #ff4444;
+}
+
+.eye_icon {
+    color: white;
+    font-size: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.card_info_block{
+    /* background-color: var(--yellow);
+    padding: 2px 3px 4px 3px;
+    border-radius: 5px; */
+    color: var(--blue);
+    font-weight: bold;
+}
+
+.card_info_block_2{
+    color: white;
+    background-color: var(--dark_blue);
+    padding: 2px 3px 4px 3px;
+    border-radius: 5px;
 }
