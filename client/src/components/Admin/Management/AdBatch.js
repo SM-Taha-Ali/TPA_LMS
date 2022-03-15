@@ -26,7 +26,6 @@ const AdBatch = () => {
             </div>
             <div className="min_height_footer">
                 <div className="container">
-                    <h1 className='py-5 text-center'>Batch Manager</h1>
                     <div>
                         <Outlet />
                     </div>

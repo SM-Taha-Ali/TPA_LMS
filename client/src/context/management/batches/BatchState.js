@@ -23,14 +23,14 @@ const GlobalState = (props) => {
     }
 
 
-    const addbatch = async (batchname, subteafees, students, start_date, end_date) => {
+    const addbatch = async ( subteafees, students, start_date, end_date, group, subgroup, section, clasS) => {
         // TODO API CALL
         const response = await fetch(`${host}/api/batches/add-batches`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ batchname, subteafees, students, start_date, end_date })
+            body: JSON.stringify({ subteafees, students, start_date, end_date, group, subgroup, section, clasS })
         });
         const countr = await response.json();
         setbatch(batch.concat(countr))
@@ -39,13 +39,13 @@ const GlobalState = (props) => {
 
     //  Update Quantity
 
-    const updatebatch = async (id, batchname, subteafees, students, start_date, end_date) => {
+    const updatebatch = async (id, batchname, subteafees, students, start_date, end_date, group, subgroup, section, clasS) => {
         const response = await fetch(`${host}/api/batches/update-batches`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ id, batchname, subteafees, students, start_date, end_date })
+            body: JSON.stringify({ id, subteafees, students, start_date, end_date, group, subgroup, section, clasS })
         });
 
         // Logic to edit in client side
@@ -55,11 +55,14 @@ const GlobalState = (props) => {
         for (let index = 0; index < newbatch.length; index++) {
             const element = batch[index];
             if (element._id == id) {
-                newbatch[index].batchname = batchname;
                 newbatch[index].subteafees = subteafees;
                 newbatch[index].students = students;
                 newbatch[index].start_date = start_date;
                 newbatch[index].end_date = end_date;
+                newbatch[index].group = group;
+                newbatch[index].subgroup = subgroup;
+                newbatch[index].section = section;
+                newbatch[index].class = clasS;
                 break;
             }
         }

@@ -11,6 +11,12 @@
     padding: 20px;
 }
 
+.color_heading{
+    color: var(--blue);
+    border: 2px solid var(--light_blue);
+    display: inline-block;
+}
+
 .icon_wrapper{
     width: 100%;
     text-align: center;
@@ -36,11 +42,30 @@
 }
 
 .batch_card{
-    width: 250px;
     height: 250px;
     border: 1px solid var(--light_green);
     border-radius: 10px;
     cursor: pointer;
+    overflow: auto;
+    width: 245px;
+    padding: 18px 18px 15px 18px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .3s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.batch_card:hover .overlay {
+    opacity: 1;
 }
 
 .add_card:hover{

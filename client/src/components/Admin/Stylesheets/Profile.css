@@ -13,9 +13,9 @@
     border-radius: 10px;
     border: 1px solid #38A3A5;
     cursor: pointer;
-    overflow: hidden;
-    width: 210px;
-    padding: 10px;
+    overflow: auto;
+    width: 225px;
+    padding: 18px 18px 15px 18px;
 }
 
 .profile_img {
@@ -63,7 +63,7 @@
 
 .profile_card:hover .overlay {
     opacity: 1;
-  }
+}
 
 .search_box {
     width: 300px;
@@ -78,7 +78,7 @@
 }
 
 .profile_desc_img_wrapper {
-    display: block;
+    display: inline-block;
     border: 1px solid red;
 }
 

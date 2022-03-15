@@ -34,7 +34,7 @@ const Login = () => {
             <div className='login-card-wrapper py-5'>
                 <div className="login-card my-5">
                     <div className="img-wrapper">
-                        <img src="https://lh3.googleusercontent.com/Aty5V_XB_jS5ZFG33b46cqd5IVcJSgeXWbWEjYcgIJ3NpsWPXRENf6YT4OIEOK3xpX7K=s85" alt="" className='login-img' />
+                        <img src="/images/tpa_logo.png" alt="" className='login-img' />
                     </div>
                     <h1 className='py-4'>Sign In</h1>
                     <div className="login-card-body">

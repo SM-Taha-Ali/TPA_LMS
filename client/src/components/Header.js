@@ -28,7 +28,7 @@ const Header = () => {
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container">
-                    <a className="navbar-brand" href="#"><img src="https://lh3.googleusercontent.com/Aty5V_XB_jS5ZFG33b46cqd5IVcJSgeXWbWEjYcgIJ3NpsWPXRENf6YT4OIEOK3xpX7K=s85" alt="" width={45} /></a>
+                    <a className="navbar-brand" href="#"><img src="/images/tpa_logo.png" alt="" width={45} /></a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon" />
                     </button>

@@ -84,16 +84,16 @@ const ProfileDesc = () => {
           <img
             src='/images/profile_avatar.png'
             alt=""
-            className="profile_desc_img d-inline-block"
+            className="profile_desc_img"
           />
-          <div className=''>
+          {/* <div className=''>
             <label htmlFor="icon-button-file">
               <Input accept="image/*" id="icon-button-file" type="file" />
               <IconButton color="primary" aria-label="upload picture" component="span">
                 <PhotoCamera className='' />
               </IconButton>
             </label>
-          </div>
+          </div> */}
         </div>
         <h3 className="text-center">{user.name}</h3>
         <div className="row g-0 mt-4">

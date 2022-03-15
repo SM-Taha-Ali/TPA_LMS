@@ -11,8 +11,7 @@ const ProfileCard = (props) => {
         <div className='col-xl-3 col-lg-4 col-md-6 col-sm-12 py-3 px-4 d-flex flex-row justify-content-center '>
             <Link
                 to='/admin/management/adprofile/profiledescstd'
-                state={{ user: user }}
-            >
+                state={{ user: user }}>
                 <div className="profile_card shadow position-relative">
                     <div className="profile_img_container text-center">
                         <img src='/images/student_avatar.png' alt="" className="profile_img" />
@@ -26,7 +25,6 @@ const ProfileCard = (props) => {
                         <RemoveRedEyeIcon className='eye_icon'></RemoveRedEyeIcon>
                     </div>
                 </div>
-
             </Link>
         </div >
     )

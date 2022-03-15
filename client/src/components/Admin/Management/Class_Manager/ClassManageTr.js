@@ -65,8 +65,7 @@ const ClassManageTr = (props) => {
                 name='teacher'
             />
             </td>
-            <td className='pe-5'><input type="text" className="form-control" name="fee" aria-describedby="emailHelp" id={`fee${tempBatch.subject}`} onChange={onChange} /></td>
-            {/* <td ><input type="text" className="form-control" name="ratio" aria-describedby="emailHelp" id={`ratio${tempBatch.subject}`} onChange={onChange} /></td> */}
+            <td className='pe-5'><input type="text" className="form-control" name="fee" aria-describedby="emailHelp" placeholder="Enter subject fee (optional)" id={`fee${tempBatch.subject}`} onChange={onChange} /></td>
             <td className='text-center'><button className="btn btn_dark_blue confirm_btn text-white" onClick={confirm} id={countr.subject} ><i className="fad fa-check-circle"></i></button></td>
         </tr>
     )

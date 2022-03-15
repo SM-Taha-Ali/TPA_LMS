@@ -121,7 +121,7 @@ const ClassManage = () => {
   return (
     <div className='position-relative'>
       <div>
-        <div className='d-flex flex-row justify-content-between align-items-center py-5' >
+        <div className='d-flex flex-row justify-content-between align-items-center pt-5 pb-3' >
           <h1>Add a Batch</h1>
           <div className="text-end back_btn">
             <Link aria-current="page" to="/admin/management/adbatch/classmanhome">
@@ -129,30 +129,27 @@ const ClassManage = () => {
             </Link>
           </div>
         </div>
+        <hr />
         <form action="">
+          <div className="text-center">
+            <h4 className='my-5 py-3 px-4 color_heading'>Session Period</h4>
+          </div>
           <div className='row mb-3'>
-            <div className="col-md-4 py-2 ">
+            <div className="col-md-6 py-2 ">
               <label htmlFor="" className="form-label">Start Date</label>
               <input type="date" className="form-control" id="sectio2n" name='start_date' placeholder='' onChange={onChangeResult} />
             </div>
-            <div className="col-md-4 py-2 ">
+            <div className="col-md-6 py-2 ">
               <label htmlFor="" className="form-label">End Date</label>
               <input type="date" className="form-control" id="sect23ion" name='end_date' placeholder='' onChange={onChangeResult} />
             </div>
-            <div className="col-md-4 py-2 ">
-              <label htmlFor="" className="form-label">Section</label>
-              <Select
-                defaultValue={null}
-                onChange={onChange}
-                options={secTion}
-                width={100}
-                placeholder="Select section"
-                name='section'
-              />
-            </div>
+          </div>
+          <br />
+          <div className="text-center">
+            <h4 className='my-5 py-3 px-4 color_heading'>Batch Credentials</h4>
           </div>
           <div className="row">
-            <div className="col-md-4 py-2">
+            <div className="col-md-3 py-2">
               <Select
                 defaultValue={null}
                 onChange={onChange}
@@ -162,7 +159,7 @@ const ClassManage = () => {
                 name='group'
               />
             </div>
-            <div className="col-md-4 py-2">
+            <div className="col-md-3 py-2">
               <Select
                 defaultValue={null}
                 onChange={onChange}
@@ -172,7 +169,7 @@ const ClassManage = () => {
                 name='subgroup'
               />
             </div>
-            <div className="col-md-4 py-2">
+            <div className="col-md-3 py-2">
               <Select
                 defaultValue={null}
                 onChange={onChange}
@@ -180,6 +177,16 @@ const ClassManage = () => {
                 width={100}
                 placeholder="Select class"
                 name='class'
+              />
+            </div>
+            <div className="col-md-3 py-2">
+              <Select
+                defaultValue={null}
+                onChange={onChange}
+                options={secTion}
+                width={100}
+                placeholder="Select section"
+                name='section'
               />
             </div>
           </div>
@@ -205,15 +212,38 @@ const ClassManage = () => {
               return <ClassManageTr key={i} countr={countr} index={i} setdone={setdone} getsubOnlyBind={getsubOnlyBind} batchCreate={batchCreate} result={result} setResult={setResult} setbatchCreate={setbatchCreate} getSubjectEmployee={getSubjectEmployee} subBinds={subBinds} />
             })}
           </tbody>
-          {/* <tfoot>
-            <td colSpan={2}></td>
-            <td className='fs-4 fw-bold pt-4'>Total Fees</td>
-            <td className='pt-4'><input type="text" className="" id="" name='fees_input_batch' onChange={onChangeResult} /></td>
-          </tfoot> */}
         </table>
-        <div className="my-5 text-end">
-          <button className="btn btn_dark_blue text-white" onClick={createBatch} disabled={done}><i className="fas fa-plus me-1"></i> Create Batch</button>
-        </div>
+      </div>
+      <br />
+      <br />
+      <div className="text-center">
+            <h4 className='my-5 py-3 px-4 color_heading'>Fee Structure</h4>
+          </div>
+      <div className='mt-5'>
+        <table className="table overflow_control">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Fee Name</th>
+              <th scope="col">Fee Type</th>
+              <th scope="col">Fee Amount</th>
+              <th scope="col" className='text-center'>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {subJECTS.map((countr, i) => {
+              return <ClassManageTr key={i} countr={countr} index={i} setdone={setdone} getsubOnlyBind={getsubOnlyBind} batchCreate={batchCreate} result={result} setResult={setResult} setbatchCreate={setbatchCreate} getSubjectEmployee={getSubjectEmployee} subBinds={subBinds} />
+            })}
+          </tbody>
+        </table>
+      </div>
+      {/* <div className="text-end py-3">
+        <button className="btn btn_dark_blue text-white" onClick={findSubBinds}>Done</button>
+      </div> */}
+      <br />
+
+      <div className="my-5 text-end">
+        <button className="btn btn_dark_blue text-white" onClick={createBatch} disabled={done}><i className="fas fa-plus me-1"></i> Create Batch</button>
       </div>
     </div>
   )
